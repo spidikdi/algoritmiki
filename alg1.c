@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "alg1.h" 
+#include "alg1.h"
 
 #define COLOR_RESET  "\033[0m"
 #define COLOR_STRING "\033[91m"  
@@ -80,9 +80,12 @@ void podsvetka(const char *line, int *mnogostroch) {
     printf(COLOR_RESET);
 }
 
-void alg1_run(int argc, char *argv[]) {
+void alg1_run() {
+    char filename[256];
+    printf("Введите имя файла для подсветки: ");
+    scanf("%s", filename);
 
-    FILE *file = fopen(argv[1], "r");
+    FILE *file = fopen(filename, "r");
     if (!file) {
         perror("Не удалось открыть файл");
         return;

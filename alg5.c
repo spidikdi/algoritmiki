@@ -120,4 +120,6 @@ void alg5_run() {
 
     dijkstra(graph, start, end);
     floydWarshall(graph, start, end);
+
+    return;
 }
