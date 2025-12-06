@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "alg4.h"
 
 //========================= STRUCTURES =========================
 
@@ -182,14 +183,11 @@ void freeTree(struct Node* r) {
 
 //========================= MAIN =========================
 
-int main() {
+void alg4_run() {
     struct Node* root = NULL;
 
     FILE* f = fopen("input.txt", "r");
-    if (!f) {
-        printf("Ошибка: нет input.txt\n");
-        return 1;
-    }
+
     int key;
     while (fscanf(f, "%d", &key) == 1)
         root = insert(root, key);
@@ -202,5 +200,4 @@ int main() {
     printUnbalancedNodes(root);
 
     freeTree(root);
-    return 0;
 }

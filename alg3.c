@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "alg3.h"
 
 typedef struct Elem{
     int value;
@@ -75,7 +76,7 @@ void deleteelems (Elem** firstelem){
     printf("Cписок удален");
 }
 
-int main(){
+void alg3_run(){
     Elem* firstelem = NULL;
     int n, value;
 

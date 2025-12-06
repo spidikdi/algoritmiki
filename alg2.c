@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "alg2.h"
 
 #define MAX_SIZE 1000
 
@@ -76,7 +77,7 @@ int filearr(int arr[], int n, const char *name){
     return 1;
 }
 
-int main(){
+void alg2_run(){
     srand(time(NULL));
     int arr[MAX_SIZE];
     int n, method, arrmethod;
@@ -86,7 +87,7 @@ int main(){
     scanf("%d", &n);
     if (n > MAX_SIZE){
         printf("Слишком большой размер массива\n");
-        return 1;
+        return;
     }
 
     printf("Выберите как задать массив:\n1. Ввод с клавиатуры\n2. Генерация случайных чисел\n3. Чтение из файлы\n");
@@ -102,11 +103,11 @@ int main(){
     case 3:
         printf("Введите имя файлы: ");
         scanf("%s", filename);
-        if (!filearr(arr, n, filename)) return 1;
+        if (!filearr(arr, n, filename)) return;
         break;
     default:
         printf("Выбран неверный способ задания массивая\n");
-        return 1;
+        return;
     }
 
     printf("Выберите метод сортировки\n1. Сортировка вставками\n2. Быстрая сортировка\n");

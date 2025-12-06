@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
+#include "alg5.h"
 
 #define V 9  // количество вершин
 
@@ -101,7 +102,7 @@ void floydWarshall(int graph[V][V], int src, int dest) {
     printf("\nРасстояние: %d\n", dist[src][dest]);
 }
 
-int main() {
+void alg5_run() {
     int graph[V][V] = {
         {0, 2, 0, 0, 0, 0, 1, 3, 0}, // 1
         {0, 0, 5, 6, 0, 0, 0, 3, 0}, // 2
@@ -119,6 +120,4 @@ int main() {
 
     dijkstra(graph, start, end);
     floydWarshall(graph, start, end);
-
-    return 0;
 }

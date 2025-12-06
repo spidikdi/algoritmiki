@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "alg1.h" 
 
 #define COLOR_RESET  "\033[0m"
 #define COLOR_STRING "\033[91m"  
@@ -79,16 +80,12 @@ void podsvetka(const char *line, int *mnogostroch) {
     printf(COLOR_RESET);
 }
 
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        fprintf(stderr, "Использование: %s kglab1.c\n", argv[0]);
-        return 1;
-    }
+void alg1_run(int argc, char *argv[]) {
 
     FILE *file = fopen(argv[1], "r");
     if (!file) {
         perror("Не удалось открыть файл");
-        return 1;
+        return;
     }
 
     char popo[MAXLINE];
@@ -98,5 +95,4 @@ int main(int argc, char *argv[]) {
     }
 
     fclose(file);
-    return 0;
 }
